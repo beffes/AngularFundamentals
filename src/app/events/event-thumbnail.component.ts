@@ -4,7 +4,7 @@ import { Component, Input, Output, EventEmitter} from '@angular/core';
   // tslint:disable-next-line: component-selector
   selector: 'event-thumbnail',
   template: `
-    <div class="well hoverweel thumbnail">
+    <div [routerLink]="['/events', event.id]" class="well hoverweel thumbnail">
       <h2> {{event?.name}}</h2>
       <div> Date: {{event?.date}}</div>
       <div [ngStyle]="getStartTimeStyle()" [ngSwitch]="event?.time">
@@ -36,7 +36,7 @@ import { Component, Input, Output, EventEmitter} from '@angular/core';
 export class EventThumbnailComponent {
  @Input() event: any;
 
- getStartTimeClass(){
+ getStartTimeClass() {
    if (this.event && this.event.time === '8:00 am') {
     return ['green', 'bold'];
    }
@@ -44,7 +44,7 @@ export class EventThumbnailComponent {
    return [];
  }
 
- getStartTimeStyle(){
+ getStartTimeStyle() {
   if (this.event && this.event.time === '8:00 am') {
    return {color: '#003300', 'font-weight': 'bold'};
   }
