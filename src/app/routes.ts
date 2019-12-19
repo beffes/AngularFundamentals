@@ -4,10 +4,11 @@ import {
   EventsListComponent,
   EventDetailsComponent,
   EventRouteActivator,
-  EventListResolver
+  EventListResolver,
+  CreateEventComponent,
+  CreateSessionComponent,
 } from './events/index';
 
-import { CreateEventComponent } from './events/create-event.component';
 import { Error404Component } from './errors/404.component';
 
 export const appRoutes = [
@@ -15,6 +16,7 @@ export const appRoutes = [
     canDeactivate: ['canDeactivateCreateEvent']},
   { path: 'events', component: EventsListComponent, resolve: {events: EventListResolver}},
   { path: 'events/:id', component: EventDetailsComponent, canActivate: [EventRouteActivator]},
+  { path: 'events/session/new', component: CreateSessionComponent},
   { path: '404', component: Error404Component},
   { path: '', redirectTo: '/events', pathMatch: 'full'},
   { path: 'user', loadChildren: './user/user.module#UserModule'}
