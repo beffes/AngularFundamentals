@@ -21,7 +21,7 @@ export class CreateEventComponent {
 
   }
 
-  saveEvent(formValues) {
+  saveEvent(formValues: any) {
     this.eventService.saveEvent(formValues);
     this.isDirty = false;
     this.router.navigate(['/events']);
