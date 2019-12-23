@@ -16,6 +16,7 @@ export class EventDetailsComponent {
   event: IEvent;
   addMode: boolean;
   filterBy = 'all';
+  sortBy = 'votes';
 
   constructor(private eventService: EventService, private route: ActivatedRoute) {
 
