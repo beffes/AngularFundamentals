@@ -23,16 +23,9 @@ export class EventDetailsComponent {
   }
   // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit() {
-    console.log(this.route.params);
-
     this.route.params.forEach((params: Params) => {
-      console.log(params);
       this.event = this.eventService.getEvent(+params.id);
     });
-
-    // this.event = this.eventService.getEvent(
-    //   +this.route.snapshot.params.id
-    //   );
   }
 
   addSession() {

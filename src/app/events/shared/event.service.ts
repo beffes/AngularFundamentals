@@ -28,8 +28,6 @@ export class EventService {
   }
 
   searchSessions(searchTerm: string) {
-    // tslint:disable-next-line: no-debugger
-    debugger;
     const term = searchTerm === undefined ? '' : searchTerm.toLocaleLowerCase();
     let results: ISession[] = [];
 
