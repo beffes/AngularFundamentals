@@ -10,7 +10,10 @@ import {
   EventListResolver,
   CreateSessionComponent,
   SessionListComponent,
-  DurationPipe
+  UpVoteComponent,
+  DurationPipe,
+  VoterService,
+  LocationValidator
 } from './events/index';
 
 import { JQ_TOKEN, // TOASTR_TOKEN, Toastr,
@@ -53,12 +56,15 @@ const jQuery = window['$'];
     CollapsibleWellComponent,
     SimpleModalComponent,
     ModalTriggerDirective,
+    UpVoteComponent,
+    LocationValidator,
     DurationPipe
   ],
   providers: [
     AuthService,
     EventService,
     ToastrService,
+    VoterService,
     // { provide: TOASTR_TOKEN, useValue: toastr },
     { provide: JQ_TOKEN, useValue: jQuery },
     EventRouteActivator,
